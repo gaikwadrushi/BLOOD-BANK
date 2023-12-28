@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Blood_Table_1">
+          <Key>
+            <PropertyRef Name="Blood_Group" />
+          </Key>
+          <Property Name="Blood_Group" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="B_Stock" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Blood_Transfer_Table">
+          <Key>
+            <PropertyRef Name="T_Num" />
+          </Key>
+          <Property Name="T_Num" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="P_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="B_Group" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Donor_Table_1">
+          <Key>
+            <PropertyRef Name="D_Num" />
+          </Key>
+          <Property Name="D_Num" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="D_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="D_Age" Type="int" Nullable="false" />
+          <Property Name="D_Gender" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="D_Phone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="D_Address" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="D_Blood_Group" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee_Table">
+          <Key>
+            <PropertyRef Name="Emp_Num" />
+          </Key>
+          <Property Name="Emp_Num" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Emp_Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Emp_Pass" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patient_Table_1">
+          <Key>
+            <PropertyRef Name="P_Num" />
+          </Key>
+          <Property Name="P_Num" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="P_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="P_Age" Type="int" Nullable="false" />
+          <Property Name="P_Phone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="P_Gender" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="P_Blood_Group" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="P_Address" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transfer_Table">
+          <Key>
+            <PropertyRef Name="T_Num" />
+          </Key>
+          <Property Name="T_Num" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="P_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="B_Group" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Blood_Table_1" EntityType="Self.Blood_Table_1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Blood_Transfer_Table" EntityType="Self.Blood_Transfer_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Donor_Table_1" EntityType="Self.Donor_Table_1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee_Table" EntityType="Self.Employee_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patient_Table_1" EntityType="Self.Patient_Table_1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transfer_Table" EntityType="Self.Transfer_Table" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Blood_Table_1">
+          <Key>
+            <PropertyRef Name="Blood_Group" />
+          </Key>
+          <Property Name="Blood_Group" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="B_Stock" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Blood_Transfer_Table">
+          <Key>
+            <PropertyRef Name="T_Num" />
+          </Key>
+          <Property Name="T_Num" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="P_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="B_Group" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Donor_Table_1">
+          <Key>
+            <PropertyRef Name="D_Num" />
+          </Key>
+          <Property Name="D_Num" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="D_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="D_Age" Type="Int32" Nullable="false" />
+          <Property Name="D_Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="D_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="D_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="D_Blood_Group" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee_Table">
+          <Key>
+            <PropertyRef Name="Emp_Num" />
+          </Key>
+          <Property Name="Emp_Num" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Emp_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Emp_Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patient_Table_1">
+          <Key>
+            <PropertyRef Name="P_Num" />
+          </Key>
+          <Property Name="P_Num" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="P_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="P_Age" Type="Int32" Nullable="false" />
+          <Property Name="P_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="P_Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="P_Blood_Group" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="P_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transfer_Table">
+          <Key>
+            <PropertyRef Name="T_Num" />
+          </Key>
+          <Property Name="T_Num" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="P_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="B_Group" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Blood_Bank_Management_SystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Blood_Table_1" EntityType="Self.Blood_Table_1" />
+          <EntitySet Name="Blood_Transfer_Table" EntityType="Self.Blood_Transfer_Table" />
+          <EntitySet Name="Donor_Table_1" EntityType="Self.Donor_Table_1" />
+          <EntitySet Name="Employee_Table" EntityType="Self.Employee_Table" />
+          <EntitySet Name="Patient_Table_1" EntityType="Self.Patient_Table_1" />
+          <EntitySet Name="Transfer_Table" EntityType="Self.Transfer_Table" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Blood_Bank_Management_SystemEntities">
+          <EntitySetMapping Name="Blood_Table_1">
+            <EntityTypeMapping TypeName="Model.Blood_Table_1">
+              <MappingFragment StoreEntitySet="Blood_Table_1">
+                <ScalarProperty Name="Blood_Group" ColumnName="Blood_Group" />
+                <ScalarProperty Name="B_Stock" ColumnName="B_Stock" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Blood_Transfer_Table">
+            <EntityTypeMapping TypeName="Model.Blood_Transfer_Table">
+              <MappingFragment StoreEntitySet="Blood_Transfer_Table">
+                <ScalarProperty Name="T_Num" ColumnName="T_Num" />
+                <ScalarProperty Name="P_Name" ColumnName="P_Name" />
+                <ScalarProperty Name="B_Group" ColumnName="B_Group" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Donor_Table_1">
+            <EntityTypeMapping TypeName="Model.Donor_Table_1">
+              <MappingFragment StoreEntitySet="Donor_Table_1">
+                <ScalarProperty Name="D_Num" ColumnName="D_Num" />
+                <ScalarProperty Name="D_Name" ColumnName="D_Name" />
+                <ScalarProperty Name="D_Age" ColumnName="D_Age" />
+                <ScalarProperty Name="D_Gender" ColumnName="D_Gender" />
+                <ScalarProperty Name="D_Phone" ColumnName="D_Phone" />
+                <ScalarProperty Name="D_Address" ColumnName="D_Address" />
+                <ScalarProperty Name="D_Blood_Group" ColumnName="D_Blood_Group" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_Table">
+            <EntityTypeMapping TypeName="Model.Employee_Table">
+              <MappingFragment StoreEntitySet="Employee_Table">
+                <ScalarProperty Name="Emp_Num" ColumnName="Emp_Num" />
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+                <ScalarProperty Name="Emp_Pass" ColumnName="Emp_Pass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patient_Table_1">
+            <EntityTypeMapping TypeName="Model.Patient_Table_1">
+              <MappingFragment StoreEntitySet="Patient_Table_1">
+                <ScalarProperty Name="P_Num" ColumnName="P_Num" />
+                <ScalarProperty Name="P_Name" ColumnName="P_Name" />
+                <ScalarProperty Name="P_Age" ColumnName="P_Age" />
+                <ScalarProperty Name="P_Phone" ColumnName="P_Phone" />
+                <ScalarProperty Name="P_Gender" ColumnName="P_Gender" />
+                <ScalarProperty Name="P_Blood_Group" ColumnName="P_Blood_Group" />
+                <ScalarProperty Name="P_Address" ColumnName="P_Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transfer_Table">
+            <EntityTypeMapping TypeName="Model.Transfer_Table">
+              <MappingFragment StoreEntitySet="Transfer_Table">
+                <ScalarProperty Name="T_Num" ColumnName="T_Num" />
+                <ScalarProperty Name="P_Name" ColumnName="P_Name" />
+                <ScalarProperty Name="B_Group" ColumnName="B_Group" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
